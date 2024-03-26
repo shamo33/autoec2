@@ -1,0 +1,12 @@
+{
+  "extends": "../../tsconfig.json",
+  "exclude": ["node_modules"],
+  "include": ["src"],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "#be/*": ["./src/*"],
+      "#types/*": ["../el-types/src/*"]
+    }
+  }
+}

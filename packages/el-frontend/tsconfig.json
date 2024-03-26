@@ -1,0 +1,14 @@
+{
+  "extends": "../../tsconfig.json",
+  "exclude": ["node_modules"],
+  "include": ["src", "*.d.ts"],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "#fe/*": ["./src/*"],
+      "#types/*": ["../el-types/src/*"]
+    },
+    "noEmit": true,
+    "allowJs": true
+  }
+}

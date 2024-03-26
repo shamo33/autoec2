@@ -1,0 +1,8 @@
+{
+  "name": "el-types",
+  "version": "0.1.0",
+  "license": "GPL-3.0-or-later",
+  "author": "shamo33",
+  "private": true,
+  "main": "src/index.ts"
+}

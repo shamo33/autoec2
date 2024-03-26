@@ -1,0 +1,31 @@
+@import '~tailwindcss/base';
+@import '~tailwindcss/components';
+@import '~tailwindcss/utilities';
+
+@import 'react-datepicker/dist/react-datepicker.css';
+@import 'react-toastify/dist/ReactToastify.css';
+
+@import './common.scss';
+
+:root {
+  --app-scale-ratio: 1;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background: $grey200;
+  -webkit-app-region: drag;
+}
+
+.drag {
+  -webkit-app-region: drag;
+}
+
+.no-drag {
+  -webkit-app-region: no-drag;
+}
+
+.react-datepicker-popper {
+  -webkit-app-region: no-drag;
+}

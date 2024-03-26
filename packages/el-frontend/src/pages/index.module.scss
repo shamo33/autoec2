@@ -1,0 +1,10 @@
+@import '../styles/colors.scss';
+
+.root {
+  $pageWidth: 1024px;
+  $pageHeight: 600px;
+  $margin: 40px;
+
+  width: calc($pageWidth - $margin * 2);
+  height: calc($pageHeight - $margin * 2);
+}

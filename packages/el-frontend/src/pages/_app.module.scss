@@ -1,0 +1,122 @@
+@import '../styles/common.scss';
+
+.mainApp {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding-top: 7px;
+  z-index: 10;
+  width: calc(100vw / var(--app-scale-ratio));
+  height: calc(100vh / var(--app-scale-ratio));
+  color: $grey900;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: scale(var(--app-scale-ratio));
+  transform-origin: 0 0;
+  overflow: hidden;
+
+  // .mainAppInner {
+  //   -webkit-app-region: no-drag;
+  // }
+}
+
+.buttons {
+  position: absolute;
+  top: 5px;
+  right: 7px;
+  display: flex;
+  z-index: 99999;
+  -webkit-app-region: no-drag;
+
+  $buttonWidth: 22px;
+  $buttonHeight: 18px;
+  $circleWidth: 13px;
+  $circleHeight: 13px;
+
+  %button {
+    position: relative;
+    width: $buttonWidth;
+    height: $buttonHeight;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .circle {
+      position: absolute;
+      top: ($buttonHeight - $circleHeight) / 2;
+      left: ($buttonWidth - $circleHeight) / 2;
+      height: $circleHeight;
+      width: $circleWidth;
+      background: $grey400;
+      border-radius: 100%;
+      transition: 0.25s;
+      opacity: 1;
+    }
+
+    .icon {
+      color: $grey600;
+      font-size: 16px;
+      width: 22px;
+      height: 18px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: 0.25s;
+      opacity: 0;
+    }
+
+    &:hover {
+      .circle {
+        opacity: 0;
+      }
+
+      .icon {
+        opacity: 1;
+      }
+    }
+  }
+
+  .button1 {
+    @extend %button;
+
+    .circle.active {
+      background: $yellow500;
+    }
+    .icon {
+      font-size: 17px;
+      height: 15px;
+    }
+  }
+  .button2 {
+    @extend %button;
+
+    .circle.active {
+      background: $green500;
+    }
+  }
+  .button3 {
+    @extend %button;
+
+    .circle.active {
+      background: $red400;
+    }
+    .icon {
+      font-size: 20px;
+    }
+  }
+}
+
+.toastContainer {
+  -webkit-app-region: no-drag;
+}
+
+.modalRoot {
+  > div > div {
+    height: 100%;
+
+    > div {
+      height: auto;
+    }
+  }
+}
